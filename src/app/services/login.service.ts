@@ -29,14 +29,15 @@ export class LoginService {
       .toPromise();
   }
 
-  firstTimePasswordChange(userId, newPassword){
-      let firstTimeLoginPasswordRequest={
+  forgottenPassword(userId, newPassword){
+      let forgotPasswordRequest={
         userId: userId,
+        oldPassword: null,
         newPassword: newPassword
-      }
+      };
 
     return this.http
-      .post("https://leasingcourseproject.herokuapp.com/customers/first/login", firstTimeLoginPasswordRequest)
+      .post("https://leasingcourseproject.herokuapp.com/customers/change/forgot", forgotPasswordRequest)
       .toPromise();
   }
 
@@ -46,7 +47,7 @@ export class LoginService {
       email: email
     };
 
-    return this.http.post('http://localhost:8080/customers/check', credentialsRequest)
+    return this.http.post('https://leasingcourseproject.herokuapp.com/customers/check', credentialsRequest)
       .toPromise();
   }
 
