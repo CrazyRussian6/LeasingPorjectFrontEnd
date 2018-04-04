@@ -8,7 +8,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 import { VehicleList} from '../services/vehicle-list.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-
+declare var $:any;
 
 
 @Component({
@@ -22,7 +22,7 @@ export class InputLoanInfoComponent implements OnInit {
     public loanForm: FormGroup;
     private userType: String = undefined;
     private minAssetPrice: number = 5000;
-
+    
     private cars: any;
     public brands: any;
     public models = [];
@@ -32,12 +32,12 @@ export class InputLoanInfoComponent implements OnInit {
 
     constructor(fb: FormBuilder, private router: Router,  public dataStore : DataStoreService,
       private vehicleList: VehicleList ){
-
         vehicleList.getAllVehicleList().then(data => {
           this.initalizeCarLists(data);
         });
       this.fb = fb;
 
+    
     }
 
     private initalizeCarLists(data){
@@ -72,15 +72,12 @@ export class InputLoanInfoComponent implements OnInit {
         margin:[3.2, [Validators.required, Validators.min(3.2), Validators.max(100), Validators.pattern("[+-]?([0-9]*[.])?[0-9]+")]],
         contractFee:[200, [Validators.required, Validators.max(1000000000)]],
         paymentDay:[null, [Validators.required, Validators.min(15), Validators.max(30)]]
-
-
-
       })
     }
 
     calculateAdvancedPaymentAmount(){
       let firstPaymentPrice=(this.assetPriceValue*(this.paymentPercentageValue/100));
-      return firstPaymentPrice;
+      return firstPaymentPrice.toFixed(2);
     }
 
     calculateContractFee(){
@@ -88,7 +85,7 @@ export class InputLoanInfoComponent implements OnInit {
       let contractFee = this.assetPriceValue*perc;
       if(contractFee<200){
         return 200;
-      }else return contractFee;
+      }else return contractFee.toFixed(2);
     }
 
     findModels(){
@@ -116,6 +113,7 @@ export class InputLoanInfoComponent implements OnInit {
     get paymentDay(){return this.loanForm.get('paymentDay') as FormControl};
     get paymentPercentage(){return this.loanForm.get('paymentPercentage') as FormControl};
     get margin() {return this.loanForm.get('margin') as FormControl};
+    
 
 
     get assetPriceValue(){return this.loanForm.get('assetPrice').value}
@@ -136,23 +134,25 @@ export class InputLoanInfoComponent implements OnInit {
     reset(){ // after reset button
       this.userType = undefined;
       this._reset();
-
     }
     _reset(){
      this.loanForm = this.createForm(this.userType);
      this.loanForm.updateValueAndValidity;
     }
 
+    
+
   ngOnInit() {
+    this.rangeSlider();
     this.loanForm = this.createForm(this.userType);
     if(this.dataStore.loanFormInfo){
       this.loanForm = this.dataStore.getLoanForm();
       this.vehicleList.getAllVehicleList().then(data => {
         this.initalizeCarLists(data);
-        this.findModels();
+        this.findModels()
+        
       });
     }
-    this.findModels()
   }
 
   userTypeChange(userTypeT: string){
@@ -174,6 +174,35 @@ export class InputLoanInfoComponent implements OnInit {
     }
   }
 
+  rangeSlider(){
+    var abs = 42;
+    var slider = $('.range-slider'),
+        range = $('.range-slider__range'),
+        value = $('.range-slider__value');
+     
+     
+      
+    slider.each(function(){
+  
+      value.each(function(){
+        var value = $(this).prev().attr('value');
+        $(this).html(value);
+        console.log(value);
+      });
+  
+      range.on('input', function(){
+        $(this).next(value).html(this.value);
+      });
+    });
+  };
+  
+  
 
+  
+  
+  
+    
+  
+ 
 
 }
