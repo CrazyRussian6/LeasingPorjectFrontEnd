@@ -152,7 +152,7 @@ export class LeasingOfficerComponent implements OnInit {
     this.leasingSummaryData.leasingStatus = selectedLoan.leasingStatus;
   }
 
-  private logout(){
+  public logout(){
     localStorage.removeItem('currentUser');
     this.router.navigate(['/']);
   }
