@@ -1,0 +1,22 @@
+<div class='container wide container_margins'>
+  <div class="form-header">Your current loans</div>
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Submission Date</th>
+              <th scope="col">Asset</th>
+              <th scope="col">Asset Price</th>
+              <th scope="col">Leasing Period</th>
+              <th scope="col">Leasing Status</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let loan of loanData">
+              <td><small>{{loan.submissionDate}}</small></td>
+              <td><small>{{loan.manufacturer}} {{loan.model}}</small></td>
+              <td><small>{{loan.assetPrice}}</small></td>
+              <td><small>{{loan.leasingPeriod}}</small></td>
+              <td><small>{{loan.leasingStatus}}</small></td>
+          </tbody>
+    </table>
+
+</div>
