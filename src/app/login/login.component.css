@@ -11,6 +11,7 @@ input {
     margin: 0 auto !important;
 }
 
+<<<<<<< HEAD
 #password {
     margin-left: -10px !important;
 }
@@ -18,3 +19,15 @@ input {
 #userId {
     margin-right: -10px !important;
 }
+=======
+div#loginContainer {
+    width: 400px;
+} 
+
+.loginButton {
+    width: 220px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e

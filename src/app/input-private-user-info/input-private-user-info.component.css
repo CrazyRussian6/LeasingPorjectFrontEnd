@@ -27,9 +27,17 @@
     border-top: none !important;
   }
 
+<<<<<<< HEAD
   .modal-dialog {
       width: 30% !important;
   }
+=======
+  /*
+  .modal-dialog {
+      width: 30% !important;
+  }
+  */
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 
 
 

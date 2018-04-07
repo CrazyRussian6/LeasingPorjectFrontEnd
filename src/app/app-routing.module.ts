@@ -13,6 +13,10 @@ import { LoanStatusComponent } from './loan-status/loan-status.component';
 import { LoanListComponent } from './loan-list/loan-list.component';
 import {ForgetPasswordComponent} from './forget-password/forget-password.component';
 import {NewPassComponent} from './new-pass/new-pass.component';
+<<<<<<< HEAD
+=======
+import {LeasingOfficerComponent} from './leasing-officer/leasing-officer.component';
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 
 
 const routes: Routes = [
@@ -67,6 +71,13 @@ const routes: Routes = [
   {
     path: 'new-pass',
           component: NewPassComponent,
+<<<<<<< HEAD
+=======
+  },
+  {
+    path: 'officer-menu',
+          component: LeasingOfficerComponent,
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
   }
 ];
 

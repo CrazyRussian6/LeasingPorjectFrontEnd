@@ -13,7 +13,11 @@
                                                         <option name="Business">Business</option>
                                                 </select>
                                                 <small *ngIf="customerType.invalid && customerType.dirty" class="form-text alert alert-danger">Customer type is required</small>
+<<<<<<< HEAD
                                         </div> 
+=======
+                                        </div>
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
                                         <div class="form-group col-sm-6 text-center">
                                                         <small>Asset Type</small>
                                                         <select class="form-control" id="assetType" formControlName="assetType">
@@ -39,7 +43,11 @@
                                                         <option *ngFor="let selectedModels of models" [value]="selectedModels">{{selectedModels}}</option>
                                                 </select>
                                         </div>
+<<<<<<< HEAD
                                 
+=======
+
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
                                 </div>
                         </div>
 
@@ -58,7 +66,11 @@
 
                                 </div>
                         </div>
+<<<<<<< HEAD
                         <div class="row">  
+=======
+                        <div class="row">
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
                         <div class="form-group col-sm-6 text-center">
                                 <small>Asset price</small>
                                         <input type="text" class="form-control" id="assetPrice" name="assetPrice" formControlName="assetPrice">
@@ -76,12 +88,19 @@
                                         <small>Lease period</small>
                                         <div class="range-slider row" >
                                                 <input class="range-slider__range" type="range" value="48" min="6" max="84" step="6" id="leasePeriod" name="leasePeriod" formControlName="leasePeriod" >
+<<<<<<< HEAD
                                                <span class="range-slider__value">0</span>
                                               </div>
                                        
                                 
                                 </div>
                                        
+=======
+                                               <span class="range-slider__value">{{leasePeriod.value}}</span>
+                                              </div>
+                                </div>
+
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
                 <div class="row">
                         <div class="form-group col-sm-6 text-center">
                                 <small >Margin</small>
@@ -96,6 +115,10 @@
                                                 <option name="paymentDay">30</option>
                                         </select>
                                         <small *ngIf="paymentDay.invalid && paymentDay.dirty" class="form-text alert alert-danger">Payment day is invalid.</small>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
                         </div>
                 </div>
                         <h5 *ngIf="assetPrice.valid&&paymentPercentage.valid">Calculated advanced payment amount: <span class="calculated">{{calculateAdvancedPaymentAmount()}}</span></h5>
@@ -103,12 +126,73 @@
 
                         <div class="form-footer">
                                 <div class="row">
+<<<<<<< HEAD
                            <button class="btn btn-outline-econdary form-buttons  btn-margin col-sm-3" (click) = "this.reset()" type = "button"  >Reset</button>
                            <button class="btn btn-secondary form-buttons btn-margin col-sm-3" [disabled]="!this.loanForm.valid" type="submit"  >Next</button>
                           
                         </div>
                         </div>
                 </form>
+=======
+                           <button class="btn btn-outline-secondary form-buttons  btn-margin col-sm-3" (click) = "this.reset()" type = "button"  >Reset</button>
+                           <button class="btn btn-outline-secondary form buttons btn-margin col-sm-3" [disabled]="!this.loanForm.valid" (click)="open(content)" type = "button">
+                             Payment information </button>
+                           <button class="btn btn-secondary form-buttons btn-margin col-sm-3" [disabled]="!this.loanForm.valid" type="submit"  >Next</button>
+                        </div>
+                        </div>
+                </form>
+                <ng-template #content let-c="close" let-d="dismiss">
+                        <div class="container" id="report-pop">
+                                <h4 class="text-center tableHeaderText">Payment information</h4>
+                                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                                        <span aria-hidden="true">&times;</span>
+                                </button>
+                           <div class = "report" id = "results">
+                            <h4 class="text-center tableHeaderText"></h4>
+                            <div class = "row">
+                              <div class="col-sm-6 text-center">
+                                <small>Financing amount: {{ this.financingAmount.toFixed(2) }} </small><br>
+                                <small>Contract fee: {{calculateContractFee()}} </small><br>
+                              </div>
+
+                              <div class="col-sm-6 text-center">
+                                <small>Total interest: {{ totalInterestSum.toFixed(2) }} </small><br>
+                                <small>Total monthly payment: {{ this.monthlyPayment.toFixed(2) }} </small><br>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div data-toggle="collapse" class="text-center show-shedule" data-target="#shedule"><small>show payment schedule <i class="fa fa-calendar"></i></small></div>
+                          <table class="table collapse" id="shedule">
+                            <thead>
+                            <tr>
+                              <th scope="col"><small>Payment date</small></th>
+                              <th scope="col"><small>Remaining amount</small></th>
+                              <th scope="col"><small>Interest payment amount</small></th>
+                              <th scope="col"><small>Asset value payment amount</small></th>
+                              <th scope="col"><small>Monthly payment</small></th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let payment of monthlyPaymentData">
+                              <td><small>{{payment.paymentDate}}</small></td>
+                              <td><small>{{payment.remainingAmount}}</small></td>
+                              <td><small>{{payment.interestPaymentAmount}}</small></td>
+                              <td><small>{{payment.assetValuePaymentAmount}}</small></td>
+                              <td><small>{{payment.monthlyPayment}}</small></td>
+                            </tr>
+                            <tr>
+                              <td><small>Asset price:<br> {{assetPriceValue}}</small></td>
+                              <td></td>
+                              <td><small>Amount:<br> {{totalInterestSum.toFixed(2)}}</small></td>
+                              <td></td>
+                              <td><small>Sum:<br> {{totalPaymentSum.toFixed(2)}}</small></td>
+                            </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+                </ng-template>
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
         </div>
 
 </div>

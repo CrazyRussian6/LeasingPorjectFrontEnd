@@ -78,15 +78,27 @@ export class BusinessUserLoanReportComponent implements OnInit {
          }else{
            this.addBusinessVehicle = false;
                   }
+<<<<<<< HEAD
 
+=======
+                  
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
                   var successMessage = " ";
                   var statusMessage  = " ";
                   var userId = " ";
                   var userIdText = " ";
+<<<<<<< HEAD
                   if(this.addBusinessUser == true && this.addBusinessVehicle == true){
                     successMessage = $('<p>').text('Your application has been accepted and is being processed right now. You should receive decision within 3 days. Use your ID to login');
                     userId = "<span>" + this.businessUserLoginID + "</span>";
                     userIdText = '<div>User login id: ' + userId +'</div>';
+=======
+                 
+                  if(this.addBusinessUser == true && this.addBusinessVehicle == true){
+                    successMessage = $('<p>').text('Your application has been accepted and is being processed right now. You should receive decision within 3 days. Use your ID to login');
+                    userId = "<span id='loginId'>" + this.businessUserLoginID + "</span>";
+                    userIdText = '<div>User login id: ' + userId + '</div>';
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
                     statusMessage = "<div id='statusMessage'>Succes!</div>";
                   }else{
                     successMessage = $('<div>').text('Loan registration denied').css('color', 'red');
@@ -101,6 +113,13 @@ export class BusinessUserLoanReportComponent implements OnInit {
 
   }
 
+<<<<<<< HEAD
+=======
+  copyToClipboards(){
+    console.log("asdsad");
+  }
+
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
   closeModal(){
     $('#confirmationPop').modal('hide');
   }
@@ -121,4 +140,18 @@ export class BusinessUserLoanReportComponent implements OnInit {
       loanForm.paymentPercentage, this.advancedPaymentAmount, loanForm.leasePeriod,
       loanForm.margin, this.contractFee, loanForm.assetPrice, loanForm.paymentDay, this.businessUserID);
   }
+<<<<<<< HEAD
+=======
+
+  copyToClipboard(elementId) {
+    var textArea = document.createElement("textarea");
+    textArea.value = document.getElementById(elementId).innerHTML;
+    document.getElementById("confirmationPop").appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    document.execCommand('copy', false, null);
+    textArea.remove();
+    console.log("sdsf")
+  }
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 }

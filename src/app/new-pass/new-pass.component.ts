@@ -16,7 +16,11 @@ export class NewPassComponent implements OnInit {
   validInput = true;
   validUser = true;
 
+<<<<<<< HEAD
   token;
+=======
+  token = null;
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
   validToken = false;
 
   constructor(fb: FormBuilder, private router: Router, private loginService: LoginService,
@@ -34,7 +38,11 @@ export class NewPassComponent implements OnInit {
     });
 
     if(this.token == null){
+<<<<<<< HEAD
       console.log("NO TOKEN SPECIFIED, SHOULD CLOSE PAGE OR SOMETHING?");
+=======
+      console.log("NO TOKEN SPECIFIED");
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
     }
   }
 
@@ -51,8 +59,14 @@ export class NewPassComponent implements OnInit {
   }
 
   submit() {
+<<<<<<< HEAD
     if (this.validToken && (this.newPassword.value === this.repeatPassword.value)) {
       this.loginService.forgottenPassword(this.userId.value, this.newPassword.value)
+=======
+
+    if (this.validToken && (this.newPassword.value === this.repeatPassword.value)) {
+      this.loginService.forgottenPassword(this.userId.value, this.newPassword.value, this.token)
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
         .then(data => {
           if (data === true) {
             this.validUser = true;
@@ -78,7 +92,13 @@ export class NewPassComponent implements OnInit {
   ngOnInit() {
     this.loginService.validateToken(this.token)
       .catch((error: any) => {
+<<<<<<< HEAD
         if(error.status === 200){
+=======
+        console.log(error);
+        if(error.status === 200){
+          console.log(error);
+>>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
           this.validToken = true;
           console.log("VALID TOKEN")
         }
