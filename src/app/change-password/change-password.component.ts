@@ -49,10 +49,6 @@ export class ChangePasswordComponent implements OnInit {
       this.newLoginRequest.emit(data);
       let temp = JSON.stringify(data);
       let response = JSON.parse(temp);
-<<<<<<< HEAD
-      console.log(response);
-=======
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
       this.goToMain();
     })
   }

@@ -17,10 +17,6 @@ html {
 
 body {
     background: linear-gradient(to bottom right, #819ca9, rgb(218,218,218));
-<<<<<<< HEAD
-    height: 100%;
-=======
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -95,19 +91,12 @@ input[type=password]:focus{
   display: inline-block;
   text-align: left;
   vertical-align: middle;
-<<<<<<< HEAD
-=======
   max-width: 1000px !important;
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 }
 
   .modal-header { border-bottom: none;}
   .modal-footer{border-top: none !important;}
-<<<<<<< HEAD
-  .modal-dialog {width: 20% !important;}
-=======
   .modalCustomWidth {width: 26% !important;}
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 
   .period input{
     padding-left: 10px;
@@ -116,11 +105,7 @@ input[type=password]:focus{
   input[type=number]{-moz-appearance: textfield;}
   
   .modal-header {
-<<<<<<< HEAD
-    background: #30b97e;
-=======
     background: #546e7a;
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
     padding: 0px !important;
   }
   
@@ -161,11 +146,7 @@ input[type=password]:focus{
     height: 100px;
     display: block;
     border-radius: 50%;
-<<<<<<< HEAD
-    stroke: #50E38E;
-=======
     stroke: rgb(48, 185, 126);
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
     margin: 50px auto;
     -webkit-animation: bounceIcon .1700s ease-in-out;
     animation: bounceIcon .1700s ease-in-out;
@@ -220,13 +201,10 @@ input[type=password]:focus{
 
 }
 
-<<<<<<< HEAD
-=======
 .btn-outline-secondary {color:#546e7a;}
 
 .point {cursor: pointer;}
 
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 input{
   border: none !important;
 }
@@ -287,8 +265,6 @@ box-shadow: inset 0 -1px 0 rgb(126, 125, 125);
   }
 }
 
-<<<<<<< HEAD
-=======
 i#copyIcon {
   position: absolute;
   bottom: 17%;
@@ -296,7 +272,6 @@ i#copyIcon {
   cursor: pointer;
 }
 
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 /* Confirmation pop up ends */
 
 
@@ -306,11 +281,6 @@ i#copyIcon {
     text-transform: capitalize !important;}
 
 .input-push-second{margin-left: -10px !important;}
-<<<<<<< HEAD
-    
-.input-push-first {margin-right: -10px !important;} 
-=======
 .input-push-first {margin-right: -10px !important;} 
 
 td { width: 20%}
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e

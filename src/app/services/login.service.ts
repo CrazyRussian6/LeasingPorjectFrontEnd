@@ -14,10 +14,7 @@ export class LoginService {
     };
 
     return this.http
-<<<<<<< HEAD
       .post("https://leasingcourseproject.herokuapp.com/customers/login", loginRequest)
-=======
-      .post("http://localhost:8080/customers/login", loginRequest)
       .toPromise();
   }
 
@@ -28,8 +25,7 @@ export class LoginService {
     };
 
     return this.http
-      .post("http://localhost:8080/officer/login", loginRequest)
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
+      .post("https://leasingcourseproject.herokuapp.com/officer/login", loginRequest)
       .toPromise();
   }
 
@@ -40,17 +36,7 @@ export class LoginService {
       newPassword: newPassword
     };
     return this.http
-<<<<<<< HEAD
       .post("https://leasingcourseproject.herokuapp.com/customers/change/password", passwordChangeRequest)
-      .toPromise();
-  }
-
-  forgottenPassword(userId, newPassword){
-      let forgotPasswordRequest={
-        userId: userId,
-        oldPassword: null,
-=======
-      .post("http://localhost:8080/customers/change/password", passwordChangeRequest)
       .toPromise();
   }
 
@@ -58,16 +44,11 @@ export class LoginService {
       let forgotPasswordRequest={
         userId: userId,
         oldPassword: token,
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
         newPassword: newPassword
       };
 
     return this.http
-<<<<<<< HEAD
       .post("https://leasingcourseproject.herokuapp.com/customers/change/forgot", forgotPasswordRequest)
-=======
-      .post("http://localhost:8080/customers/change/forgot", forgotPasswordRequest)
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
       .toPromise();
   }
 
@@ -77,21 +58,17 @@ export class LoginService {
       email: email
     };
 
-<<<<<<< HEAD
-    return this.http.post('https://leasingcourseproject.herokuapp.com/customers/check', credentialsRequest)
-=======
-    return this.http.post("http://localhost:8080/customers/check", credentialsRequest)
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
+    return this.http.post("https://leasingcourseproject.herokuapp.com/customers/check", credentialsRequest)
       .toPromise();
   }
 
   sendRecoveryMail(email){
-    return this.http.post('http://localhost:8080/customers/forgotpassword' + email, email)
+    return this.http.post('https://leasingcourseproject.herokuapp.com/customers/forgotpassword' + email, email)
       .toPromise();
   }
 
   validateToken(token){
-    return this.http.get('http://localhost:8080/customers/resetpasswordval?token=' + token)
+    return this.http.get('https://leasingcourseproject.herokuapp.com/customers/resetpasswordval?token=' + token)
       .toPromise();
   }
 

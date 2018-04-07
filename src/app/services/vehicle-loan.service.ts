@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-import {HttpClient,HttpClientModule } from '@angular/common/http';
-=======
 import {HttpClient} from '@angular/common/http';
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 
 @Injectable()
 export class VehicleLoanService {
@@ -28,32 +24,19 @@ export class VehicleLoanService {
     };
 
     return this.http
-<<<<<<< HEAD
       .post("https://leasingcourseproject.herokuapp.com/vehicleLeasings/add", vehicleLeasing)
-      .toPromise();
-  }
-
-  getAllVehicleLeasingsUsers(){
-    return this.http
-      .get("https://leasingcourseproject.herokuapp.com/vehicleLeasings")
-      .toPromise();
-  }
-
-=======
-      .post("http://localhost:8080/vehicleLeasings/add", vehicleLeasing)
       .toPromise();
   }
 
   updateVehicleLeasingStatus(id, leasing){
     return this.http
-      .put("http://localhost:8080/vehicleLeasings/updatestatus" + id, leasing)
+      .put("https://leasingcourseproject.herokuapp.com/vehicleLeasings/updatestatus" + id, leasing)
       .toPromise();
   }
 
   getVehicleLeasingsByUserID(id){
     return this.http
-      .get("http://localhost:8080/vehicleLeasings/" + id)
+      .get("https://leasingcourseproject.herokuapp.com/vehicleLeasings/" + id)
       .toPromise();
   }
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 }

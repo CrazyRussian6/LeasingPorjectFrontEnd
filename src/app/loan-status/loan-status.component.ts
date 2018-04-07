@@ -2,13 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { DataStoreService } from '../services/data-store.service';
-<<<<<<< HEAD
-=======
 import  {NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { InputLoanInfoComponent } from '../input-loan-info/input-loan-info.component';
 import {VehicleLoanService} from '../services/vehicle-loan.service';
 
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 
 @Component({
   selector: 'app-loan-status',
@@ -17,18 +14,6 @@ import {VehicleLoanService} from '../services/vehicle-loan.service';
 })
 export class LoanStatusComponent implements OnInit {
   loanData;
-<<<<<<< HEAD
-
-  constructor(private route: ActivatedRoute, public dataStore : DataStoreService) {
-    this.loanData = dataStore.getLoanResponse();
-   }
-
-  ngOnInit() {
-  }
-
-  
-
-=======
   constructor(private route: ActivatedRoute, public dataStore : DataStoreService, private modalService: NgbModal,
    public router: Router, private vehicleLoanService: VehicleLoanService) {
     this.loanData = dataStore.getLoanResponse();
@@ -126,5 +111,4 @@ export class LoanStatusComponent implements OnInit {
     localStorage.removeItem('currentUser');
     this.router.navigate(['/']);
   }
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 }

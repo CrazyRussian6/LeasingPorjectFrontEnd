@@ -21,22 +21,14 @@ export class BusinessUserService {
 
 
     return this.http
-<<<<<<< HEAD
       .post("https://leasingcourseproject.herokuapp.com/customers/addBusinessCustomer", businessUser)
-=======
-      .post("http://localhost:8080/customers/addBusinessCustomer", businessUser)
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
       .toPromise();
 
   }
 
   getAllBusinessUsers(){
     return this.http
-<<<<<<< HEAD
       .get("https://leasingcourseproject.herokuapp.com/customers")
-=======
-      .get("http://localhost:8080/customers")
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
       .toPromise();
   }
 }

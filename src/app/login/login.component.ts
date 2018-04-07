@@ -1,10 +1,4 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-<<<<<<< HEAD
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
-import { DataStoreService } from '../services/data-store.service';
-=======
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
 import {LoginService} from '../services/login.service';
@@ -13,7 +7,6 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AdministratorService} from '../services/administrator.service';
 import {VehicleLoanService} from '../services/vehicle-loan.service';
 import {BusinessUserService} from '../services/business-user.service';
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 
 @Component({
   selector: 'app-login',
@@ -24,20 +17,6 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
 
-<<<<<<< HEAD
-  constructor(fb: FormBuilder, private router: Router, private loginService: LoginService, public dataStore: DataStoreService) {
-
-    this.loginForm = fb.group({
-      userId: [null, [Validators.required, Validators.maxLength(20)] ],
-      password:[null, [Validators.required, Validators.maxLength(20) ]]
-    })
-   }
-
-   badUserData = false;
-
-  get userId(){ return this.loginForm.get('userId') as FormControl;}
-  get password(){ return this.loginForm.get('password') as FormControl;}
-=======
   constructor(fb: FormBuilder, private router: Router, private loginService: LoginService, public dataStore: DataStoreService,
               private adminService: AdministratorService, private vehicleLoanService: VehicleLoanService) {
 
@@ -65,7 +44,6 @@ export class LoginComponent implements OnInit {
   get password() {
     return this.loginForm.get('password') as FormControl;
   }
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 
   @Output()
   newLoginRequest = new EventEmitter<Object>();
@@ -74,43 +52,6 @@ export class LoginComponent implements OnInit {
 
   }
 
-<<<<<<< HEAD
-  goToMain(){
-    this.router.navigate(['/']);
-  }
-
-  login(){
-    this.tryToLogin();
-  }
-
-  forgotPassword(){
-    this.forgotPasswordPrompt();
-  }
-
-  forgotPasswordPrompt(){
-    this.router.navigate(['/forget-password'])
-  }
-
-  tryToLogin(){
-    return this.loginService.createLoginRequest(this.userId.value, this.password.value)
-    .then(data => {
-      this.newLoginRequest.emit(data);
-      let temp = JSON.stringify(data);
-      let response = JSON.parse(temp);
-      if(!response){
-        this.badUserData = true;
-      }
-      else if (response=='Password exists'){
-        this.badUserData = false;
-        this.router.navigate(['/change-password']);
-      }
-      else if(response){
-        this.badUserData = false;
-        this.dataStore.storeLoanResponse(response);
-        this.router.navigate(['/loan-status']);
-      }
-    })
-=======
   goToMain() {
     this.router.navigate(['/']);
   }
@@ -212,7 +153,6 @@ export class LoginComponent implements OnInit {
         this.dataStore.storeLoanResponse(data);
         this.router.navigate(['/loan-status']);
       });
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
   }
 
 }

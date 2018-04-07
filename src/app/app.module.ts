@@ -28,15 +28,12 @@ import { LoanListComponent } from './loan-list/loan-list.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import {BackValidationService} from './services/back-validation.service';
 import {NewPassComponent} from './new-pass/new-pass.component';
-<<<<<<< HEAD
-=======
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LeasingOfficerComponent } from './leasing-officer/leasing-officer.component';
 import { TableComponent } from './leasing-officer/table/table.component';
 import { TableRowComponent } from './components/table-row/table-row.component';
 import { PopupComponentComponent } from './leasing-officer/admin-loan-info-popup-table/admin-loan-info-popup-table.component';
 import {AdministratorService} from './services/administrator.service';
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
 
 @NgModule({
   declarations: [
@@ -54,13 +51,10 @@ import {AdministratorService} from './services/administrator.service';
     LoanListComponent,
     ForgetPasswordComponent,
     NewPassComponent,
-<<<<<<< HEAD
-=======
     LeasingOfficerComponent,
     TableComponent,
     TableRowComponent,
     PopupComponentComponent
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
   ],
   imports: [
     BrowserModule,
@@ -69,16 +63,10 @@ import {AdministratorService} from './services/administrator.service';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-<<<<<<< HEAD
-  ],
-  providers: [AppComponent, DataStoreService, PrivateUserService, BusinessUserService, BackValidationService,
-    VehicleLoanService, LoginService, VehicleList],
-=======
     NgbModule.forRoot(),
   ],
   providers: [AppComponent, DataStoreService, PrivateUserService, BusinessUserService, BackValidationService,
     VehicleLoanService, LoginService, VehicleList, AdministratorService],
->>>>>>> 329dcb9ef081b7c1bee0d96e4f6759637bbade8e
   bootstrap: [AppComponent]
 })
 export class AppModule { }

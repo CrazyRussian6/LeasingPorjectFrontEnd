@@ -9,7 +9,7 @@ export class AdministratorService {
 
   getCustomerDataForBusinessOfficer(headers) {
     return this.http
-      .get('http://localhost:8080/officer/loans', headers)
+      .get('https://leasingcourseproject.herokuapp.com/officer/loans', headers)
       .toPromise();
   }
 
