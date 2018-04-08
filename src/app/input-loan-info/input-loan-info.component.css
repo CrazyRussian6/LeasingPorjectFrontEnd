@@ -102,3 +102,7 @@
   cursor: pointer;
   background-color: rgb(208,217,220);
 }
+
+.form-buttons {
+  color:darkslategrey;
+}
