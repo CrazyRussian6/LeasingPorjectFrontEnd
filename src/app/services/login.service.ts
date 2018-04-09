@@ -62,8 +62,12 @@ export class LoginService {
       .toPromise();
   }
 
-  sendRecoveryMail(email){
-    return this.http.post('https://leasingcourseproject.herokuapp.com/customers/forgotpassword' + email, email)
+  sendRecoveryMail(userId, email){
+    let credentialsRequest = {
+      userId: userId,
+      email: email
+    };
+    return this.http.post('https://leasingcourseproject.herokuapp.com/customers/forgotpassword', credentialsRequest)
       .toPromise();
   }
 

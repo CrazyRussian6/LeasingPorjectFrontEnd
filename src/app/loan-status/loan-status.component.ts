@@ -75,8 +75,7 @@ export class LoanStatusComponent implements OnInit {
       monthlyPayment: this.totalPaymentSum
     };
 
-
-    for(let month = 1; month < loanData.leasingPeriod; month++){
+    for(let month = 1; month <= loanData.leasingPeriod; month++){
       let withInterest = (remainingAmount * (1 + marginVal));
       let interestPaymentAmount = withInterest - remainingAmount;
       let assetValuePaymentAmount = (this.monthlyPayment - interestPaymentAmount);
@@ -94,7 +93,7 @@ export class LoanStatusComponent implements OnInit {
     return this.monthlyPaymentData;
   }
 
-  private isLeapYear(year) {
+  isLeapYear(year) {
     return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
   }
 
