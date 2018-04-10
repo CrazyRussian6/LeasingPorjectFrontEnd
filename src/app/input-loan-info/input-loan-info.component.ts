@@ -135,6 +135,8 @@ export class InputLoanInfoComponent implements OnInit {
   _reset() {
     this.loanForm = this.createForm(this.userType);
     this.dataStore.loanFormInfo = null;
+    this.dataStore.privateUserInfo = null;
+    this.dataStore.businessUserInfo = null;
     this.loanForm.updateValueAndValidity;
   }
 

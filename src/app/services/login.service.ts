@@ -18,17 +18,6 @@ export class LoginService {
       .toPromise();
   }
 
-  createOfficerLoginRequest(userId, password){
-    let loginRequest = {
-      userId: userId,
-      password: password
-    };
-
-    return this.http
-      .post("https://leasingcourseproject.herokuapp.com/officer/login", loginRequest)
-      .toPromise();
-  }
-
   requestPasswordChange(userId, oldPassword, newPassword){
     let passwordChangeRequest={
       userId: userId,
@@ -58,7 +47,7 @@ export class LoginService {
       email: email
     };
 
-    return this.http.post("https://leasingcourseproject.herokuapp.com/customers/check", credentialsRequest)
+    return this.http.post('https://leasingcourseproject.herokuapp.com/customers/check', credentialsRequest)
       .toPromise();
   }
 

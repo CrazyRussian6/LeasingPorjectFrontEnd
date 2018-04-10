@@ -86,7 +86,7 @@ export class PrivateUserLoanReportComponent implements OnInit {
                     successMessage = $('<p>').text('Your application has been accepted and is being processed right now. You should receive decision within 3 days. Use your ID to login');
                     userId = "<span id='loginId'>" + this.privateUserLoginID + "</span>";
                     userIdText = '<div>User login id: ' + userId + '</div>';
-                    statusMessage = "<div id='statusMessage'>Succes!</div>";
+                    statusMessage = "<div id='statusMessage'>Success!</div>";
                   }else{
                     successMessage = $('<div>').text('Loan registration denied').css('color', 'red');
                   }
